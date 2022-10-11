@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function chuyendoi(){
+    let tien = document.getElementById("tien").value
+    let before = document.getElementById("before").value
+    let after = document.getElementById("after").value
+    let result
+      if( before === "VNĐ" && after=== "USD"){
+        result = tien /23000
+      }
+      if (before==="USD" && after==="VNĐ"){
+       result = tien *23000
+    }
+      else{
+        result = tien
+      }
+      document.getElementById("kq").innerHTML=result
+  }
+</script>
+  <table>
+    <tr>
+      <th>Amount</th>
+      <th>FormCurreny</th>
+      <th>To Currency</th>
+    </tr>
+    <tr>
+      <td><input type="text" id="tien" ></td>
+      <td><select id="before">
+        <option value="VNĐ">VNĐ</option>
+        <option value="USD">USD</option>
+      </select></td>
+      <td><select id="after">
+        <option value="VNĐ">VNĐ</option>
+        <option value="USD">USD</option>
+      </select></td>
+      <td>
+        <button onclick="chuyendoi()">Click me</button>
+      </td>
+    </tr>
+    <tr></tr>
+  </table>
+
+<div id="kq"></div>
+
+</body>
+</html>
